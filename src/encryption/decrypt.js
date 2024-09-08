@@ -6,8 +6,8 @@ const fs = require('fs');
 function decryptFile(encryptedFilePath, key, outputFilePath) {
   const encryptedData = fs.readFileSync(encryptedFilePath);
 
-  const iv = encryptedData.slice(0, 16); // Extract the IV
-  const encryptedText = encryptedData.slice(16); // Extract the encrypted data
+  const iv = encryptedData.slice(0, 16);
+  const encryptedText = encryptedData.slice(16);
 
   const decipher = crypto.createDecipheriv('aes-256-cbc', key, iv);
   let decryptedData = decipher.update(encryptedText);
@@ -17,7 +17,6 @@ function decryptFile(encryptedFilePath, key, outputFilePath) {
   console.log('File decrypted successfully.');
 }
 
-// Load the key from the saved file
 const key = fs.readFileSync('./keys/secret.key');
 
 const encryptedFilePath = path.join(__dirname, '../../encrypted_files/encrypted_file.enc');
