@@ -19,6 +19,6 @@ function encryptFile(filePath, key, outputFilePath) {
 const key = crypto.randomBytes(32); // (AES-256 requires a 32-byte key)
 fs.writeFileSync('./keys/secret.key', key);
 
-const filePath = 'img.jpg';
-const outputFilePath = './encrypted_files/encrypted_file.enc';
+const filePath = 'img3.jpeg';
+const outputFilePath = './encrypted_files/encrypted_file(img3).enc';
 encryptFile(filePath, key, outputFilePath);

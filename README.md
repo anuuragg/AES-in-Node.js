@@ -18,7 +18,7 @@ This project demonstrates how to implement Advanced Encryption Standard (AES) en
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/AES-in-Node.js.git
+    git clone https://github.com/anuuragg/AES-in-Node.js.git
     cd AES-in-Node.js
     ```
 

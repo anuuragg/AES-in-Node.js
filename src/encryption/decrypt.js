@@ -19,6 +19,6 @@ function decryptFile(encryptedFilePath, key, outputFilePath) {
 
 const key = fs.readFileSync('./keys/secret.key');
 
-const encryptedFilePath = path.join(__dirname, '../../encrypted_files/encrypted_file.enc');
-const outputFilePath = path.join(__dirname, '../../decrypted_files/decrypted_file.jpg');
+const encryptedFilePath = path.join(__dirname, '../../encrypted_files/encrypted_file(img3).enc');
+const outputFilePath = path.join(__dirname, '../../decrypted_files/decrypted_file(img3).jpg');
 decryptFile(encryptedFilePath, key, outputFilePath);
