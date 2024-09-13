@@ -1,6 +1,8 @@
 const crypto = require('crypto');
 const fs = require('fs');
 
+const file_name = 'img.jpg';
+
 // Function to encrypt the file
 function encryptFile(filePath, key, outputFilePath) {
   const fileData = fs.readFileSync(filePath);
@@ -17,8 +19,9 @@ function encryptFile(filePath, key, outputFilePath) {
 }
 
 const key = crypto.randomBytes(32); // (AES-256 requires a 32-byte key)
-fs.writeFileSync('./keys/secret.key', key);
+// fs.writeFileSync('./keys/secret.key', key);
+fs.writeFileSync(`./keys/${file_name}.key`, key);
 
-const filePath = 'img3.jpeg';
-const outputFilePath = './encrypted_files/encrypted_file(img3).enc';
+const filePath = `${file_name}`;
+const outputFilePath = `./encrypted_files/encrypted_file(${file_name}).enc`;
 encryptFile(filePath, key, outputFilePath);

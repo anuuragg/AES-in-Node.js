@@ -2,6 +2,8 @@ const crypto = require('crypto');
 const path = require('path');
 const fs = require('fs');
 
+const file_name = 'img.jpg';
+
 // Function to decrypt the file
 function decryptFile(encryptedFilePath, key, outputFilePath) {
   const encryptedData = fs.readFileSync(encryptedFilePath);
@@ -17,8 +19,9 @@ function decryptFile(encryptedFilePath, key, outputFilePath) {
   console.log('File decrypted successfully.');
 }
 
-const key = fs.readFileSync('./keys/secret.key');
+// const key = fs.readFileSync('./keys/secret.key');
+const key = fs.readFileSync(`./keys/${file_name}.key`);
 
-const encryptedFilePath = path.join(__dirname, '../../encrypted_files/encrypted_file(img3).enc');
-const outputFilePath = path.join(__dirname, '../../decrypted_files/decrypted_file(img3).jpg');
+const encryptedFilePath = path.join(__dirname, `../../encrypted_files/encrypted_file(${file_name}).enc`);
+const outputFilePath = path.join(__dirname, `../../decrypted_files/decrypted_file(${file_name}).jpg`);
 decryptFile(encryptedFilePath, key, outputFilePath);
